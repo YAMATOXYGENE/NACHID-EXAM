@@ -1,0 +1,10 @@
+{% extends 'jokes/base.html' %}
+{% block title %}Joke Detail{% endblock %}
+{% block content %}
+<h2>{{ joke.question }}</h2>
+<p>{{ joke.answer }}</p>
+<p>Created at: {{ joke.created_at }}</p>
+<p>Updated at: {{ joke.updated_at }}</p>
+<a href="{% url 'jokes:update_joke' joke.pk %}">Edit</a>
+<a href="{% url 'jokes:delete_joke' joke.pk %}">Delete</a>
+{% endblock %}

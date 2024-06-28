@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>{% block title %}Jokes{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'jokes/styles.css' %}">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'jokes:signup' %}">Sign Up</a></li>
+                <li><a href="{% url 'login' %}">Sign In</a></li>
+                <li><a href="{% url 'jokes:list_jokes' %}">List Jokes</a></li>
+                <li><a href="{% url 'jokes:create_joke' %}">Create Joke</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

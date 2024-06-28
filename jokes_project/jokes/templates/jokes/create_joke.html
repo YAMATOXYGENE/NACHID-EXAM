@@ -1,0 +1,10 @@
+{% extends 'jokes/base.html' %}
+{% block title %}Create Joke{% endblock %}
+{% block content %}
+<h2>Create Joke</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+{% endblock %}
